@@ -462,3 +462,379 @@ footer a:hover {
 .card-links a:hover {
     color: var(--violet-doux);
 }
+
+
+/* --- Page Divertissements : Version Créative --- */
+
+.divertissement-hero {
+    text-align: center;
+    padding: 6rem 1rem 4rem;
+    background-color: ''; /* Pour contraster avec le fond gris */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    margin-bottom: 3rem;
+}
+
+.divertissement-hero h1 {
+    color: var(--violet-doux);
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.divertissement-hero p {
+    color: var(--gris-fonce);
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+}
+
+.portfolio-divertissement {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    max-width: 1300px;
+    margin: 0 auto 10rem auto;
+    padding: 0 2rem;
+}
+
+/* Structure de la carte créative */
+.creative-card {
+    position: relative;
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.creative-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(108, 99, 255, 0.2);
+}
+
+/* Image d'arrière-plan */
+.card-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.creative-card:hover .card-bg {
+    filter: blur(4px) brightness(0.7); /* Floutage et assombrissement au survol */
+    transform: scale(1.05); /* Léger zoom */
+}
+
+/* Superposition de contenu */
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0.1) 80%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Texte initialement en bas */
+    padding: 2rem;
+    color: white;
+    transition: background 0.4s ease;
+}
+
+.creative-card:hover .card-overlay {
+    background: linear-gradient(to top, rgba(108, 99, 255, 0.8) 0%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+/* Détails initiaux */
+.card-details {
+    transition: transform 0.4s ease;
+}
+
+.creative-card:hover .card-details {
+    transform: translateY(-80px); /* Remonte pour faire de la place */
+}
+
+.card-details .main-icon {
+    font-size: 2.5rem;
+    color: var(--orange-vif); /* Accent color */
+    margin-bottom: 1rem;
+}
+
+.card-details h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.card-details .tag {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    display: inline-block;
+    color: #F8F8F8;
+}
+
+/* Contenu révélé au survol */
+.card-revealed-content {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s; /* Délai pour l'apparition */
+}
+
+.creative-card:hover .card-revealed-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-revealed-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- Adaptabilité Mobile --- */
+@media (max-width: 800px) {
+    .portfolio-divertissement {
+        grid-template-columns: 1fr; /* Une seule colonne sur tablette/mobile */
+        gap: 2rem;
+    }
+    .creative-card {
+        height: 350px; /* Cartes un peu moins hautes */
+    }
+    .divertissement-hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
+
+/* --- Page Passions : Style Bento Grid --- */
+/* --- Variables de Design (Conservées) --- */
+:root {
+    --violet-doux: #6c63ff;
+    --violet-Fonce: #4834d4;
+    --gris-fonce: #2d3436;
+    --orange-vif: #ff9f43;
+    --bg-light: #f9f9ff;
+}
+
+/* --- Section Intro --- */
+.passion-intro {
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+}
+
+.passion-intro h1 {
+    font-size: 3.5rem;
+    color: var(--violet-doux);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.passion-intro p {
+    color: var(--gris-fonce);
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- Bento Grid --- */
+.bento-grid {
+    max-width: 1200px;
+    margin: 0 auto 10rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 280px; /* Hauteur ajustée pour l'équilibre */
+    gap: 1.5rem;
+}
+
+/* --- Style des Blocs (Cliquables) --- */
+.bento-item {
+    background: white;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none; /* Important pour les liens */
+    color: inherit;
+}
+
+.bento-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(108, 99, 255, 0.15);
+}
+
+/* --- Organisation des blocs --- */
+.web-dev {
+    grid-column: span 2;
+    grid-row: span 2;
+    flex-direction: row; 
+}
+
+.ai-robotics {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.learning {
+    grid-column: span 3;
+    grid-row: span 1;
+    background: linear-gradient(135deg, var(--violet-doux), var(--violet-Fonce));
+    color: white !important;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* --- Contenu interne --- */
+.bento-content {
+    padding: 2rem;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.icon-box {
+    width: 55px;
+    height: 55px;
+    background: #F0EFFF;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: var(--violet-doux);
+    margin-bottom: 1.2rem;
+}
+
+.bento-item h2, .bento-item h3 {
+    margin-bottom: 0.8rem;
+    color: var(--violet-doux);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.bento-item p {
+    color: var(--gris-fonce);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* --- Images --- */
+.bento-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    transition: transform 0.5s ease;
+}
+
+.web-dev .bento-img {
+    width: 45%; /* Image plus large pour le bloc principal */
+}
+
+.bento-item:hover .bento-img {
+    transform: scale(1.05);
+}
+
+/* --- Éléments spécifiques au bloc Learning --- */
+.learning h3 {
+    font-size: 2.2rem;
+    color: white;
+}
+
+.learning p {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.learning i {
+    font-size: 3rem;
+    color: var(--orange-vif);
+    margin-bottom: 1rem;
+}
+
+/* --- Badges Stack --- */
+.stack-mini {
+    margin-top: 1rem;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.stack-mini span {
+    background: var(--violet-doux);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 900px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+    .web-dev, .ai-robotics, .learning {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .web-dev {
+        flex-direction: column-reverse; /* Image en haut sur mobile */
+    }
+    .web-dev .bento-img {
+        width: 100%;
+        height: 250px;
+    }
+    .passion-intro h1 {
+        font-size: 2.5rem;
+    }
+}
+
+
+
+/* On cible la première carte de divertissement par exemple */
+.creative-card:nth-child(1) .card-bg {
+    /* 1. On rend l'image HTML d'origine invisible */
+    opacity: 0; 
+}
+
+.creative-card:nth-child(1) {
+    /* 2. On met ta nouvelle image en fond de la carte */
+    background-image: url('../Images/cas.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* --- Styles spécifiques aux nouvelles icônes (FontAwesome) --- */
+
+/* Icône pour la carte "Évasion Littéraire" */
+.creative-card .card-details .fa-book-open {
+    /* La couleur var(--primary-color) sera appliquée si vous avez le CSS précédent */
+    font-size: 2rem; /* Taille par défaut si non définie globalement */
+    margin-bottom: 15px;
+}
+
+/* Icône pour la carte "Capture Visuelle" */
+.creative-card .card-details .fa-camera {
+    /* La couleur var(--primary-color) sera appliquée si vous avez le CSS précédent */
+    font-size: 2rem; /* Taille par défaut si non définie globalement */
+    margin-bottom: 15px;
+}
