@@ -743,7 +743,7 @@ footer a:hover {
 }
 
 .web-dev .bento-img {
-    width: 45%; /* Image plus large pour le bloc principal */
+    width: 100%; /* Image plus large pour le bloc principal */
 }
 
 .bento-item:hover .bento-img {
