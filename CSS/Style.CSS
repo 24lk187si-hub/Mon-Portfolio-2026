@@ -174,12 +174,13 @@ section h2::after {
 
 .compétences table th, .compétences table td {
     padding: 15px;
+    
 }
 
 .compétences table thead {
-    background-color: var(--violet-doux);
     color: #FFF;
     text-transform: uppercase;
+    background-color: var(--violet-doux);
 }
 
 .compétences table tbody td {
